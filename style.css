@@ -1,0 +1,801 @@
+/* 0000000000000000000000000000000000000000000000000000000ستايل الصفحتين index.html----view-products.html000000000000000000000000000000000000000000 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-size: cover;
+  background-color: #9ea4ad;
+  /* خلفية */
+  color: #f5f5f5;
+  background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  /* يضمن أن يكون ارتفاع الجسم على الأقل 100% من ارتفاع النافذة */
+}
+
+.navbar {
+  background-color: #9ea4ad;
+  /* خلفية */
+  color: #f5f5f5;
+  background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
+  border: 2px solid cornsilk;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar .btn {
+  margin: 0 10px;
+  /* مسافة متساوية بين الأزرار */
+}
+
+.btn {
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  color: white;
+}
+
+.product-image {
+  width: 200px;
+  /* تجعل الصورة تأخذ عرض البطاقة بالكامل */
+  height: 300px;
+  /* تحديد ارتفاع ثابت للصورة */
+  object-fit: cover;
+  /* تضمن أن الصورة تملأ المساحة دون تغيير نسبة العرض إلى الارتفاع */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* ظل للصورة */
+  object-position: center;
+  /* تركز الصورة في منتصف المساحة */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* ظل للصورة */
+}
+
+.navbar-toggler {
+  padding: 0%;
+  margin-left: 5%;
+}
+
+.navbar-toggler-icon {
+  background-color: rgb(17, 49, 98);
+  /* تغيير لون الأيقونة إلى الأبيض */
+  border-radius: 20%;
+  padding: 24% 40%;
+}
+
+.navbar-toggler-icon:hover {
+  border-radius: 20%;
+  background-color: rgb(136, 168, 215);
+  /* تغيير لون الأيقونة إلى الأبيض */
+  padding: 24% 40%;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: none;
+  /* إزالة صورة الخلفية الافتراضية */
+}
+
+/* استخدام مزيج من الألوان */
+.navbar-dark .navbar-toggler-icon {
+  color: #f5f5f5;
+  background-color: white;
+  /* لون خلفية الأيقونة */
+  border-radius: 0.25rem;
+  /* زوايا مستديرة */
+}
+
+.dropdown-menu {
+  min-width: 200px;
+}
+
+#productsContainer {
+  display: flex;
+  /* استخدام Flexbox */
+  flex-wrap: wrap;
+  /* يسمح بتوزيع العناصر في عدة صفوف */
+  justify-content: space-between;
+  /* توزيع المساحة بين العناصر */
+}
+
+.card {
+  flex-grow: 1;
+  /* يسمح للبطاقة بالنمو لتملأ المساحة المتاحة */
+  display: flex;
+  /* استخدام Flexbox داخل البطاقة */
+  flex-direction: column;
+  /* ترتيب العناصر عمودياً */
+}
+
+.product-card {
+  display: flex;
+  /* استخدام Flexbox داخل البطاقة */
+  flex-direction: column;
+  /* ترتيب العناصر عمودياً */
+  flex: 1 1 calc(25% - 20px);
+  /* أربع بطاقات في كل صف */
+  margin-bottom: 20px;
+  /* فراغ بين الصفوف */
+  min-width: 300px;
+  /* الحد الأدنى للعرض */
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* تأثير ثلاثي الأبعاد */
+}
+
+.card-price {
+  color: #28a745;
+  font-weight: 900;
+}
+
+.card-title {
+  font-weight: 900;
+}
+
+.card-body {
+  flex-grow: 1;
+  /* يجعل محتوى البطاقة ينمو لملء المساحة المتاحة */
+  background-color: #9ea4ad;
+  /* خلفية */
+  color: #f5f5f5;
+  background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
+}
+
+.product-card:hover {
+  background-color: #9ea4ad;
+  /* خلفية */
+  color: #f5f5f5;
+  background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-body:hover {
+  background-color: #1f242b;
+  /* خلفية */
+  color: #f5f5f5;
+  background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
+}
+
+.product-image {
+  width: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* ظل للصورة */
+  background-color: black;
+}
+
+.favorite-icon {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.favorite-icon.active {
+  color: red;
+}
+
+#cartDropdown {
+  min-width: 300px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.category {
+  font-style: italic;
+  color: #6c757d;
+}
+
+#totalPrice {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    margin-bottom: 15px;
+  }
+}
+
+/* إضافات للمظهر العام */
+
+.product-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.price {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.favorite-btn {
+  font-size: xx-large;
+  margin-left: 30%;
+  border: 2px solid transparent;
+  /* حدود شفافة كخيار افتراضي */
+  border-radius: 5px;
+  /* زوايا دائرية */
+  transition: border-color 0.3s;
+  /* تأثير انتقال سلس */
+}
+
+.favorite-btn.active {
+  border-color: red;
+  /* تغيير لون الحدود عند النقر */
+}
+.favorite-btn i {
+  color: white;
+  /* اللون الافتراضي للأيقونة */
+  transition: color 0.3s;
+  /* تأثير انتقال سلس */
+}
+
+.favorite-btn.active i {
+  color: red;
+  /* اللون عند النقر */
+}
+
+/* تخصيص Toast */
+#favoriteToast {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+}
+
+.toast-body {
+  background-color: #a1b92a;
+  /* خلفية الرسالة */
+  color: black;
+  /* لون الخط */
+  font-weight: bold;
+  /* جعل الخط عريض */
+  font-size: 1.2rem;
+  /* حجم الخط أكبر */
+  text-align: center;
+  /* محاذاة النص في المنتصف */
+}
+
+.professional-image {
+  width: 100%;
+  /* عرض الصورة ليكون 100% من الحاوية */
+  max-width: 300px;
+  /* أقصى عرض للصورة */
+  border-radius: 15px;
+  /* حواف دائرية */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* ظل للصورة */
+}
+
+.card-text {
+  height: 100px;
+}
+
+.add-to-cart {
+  margin-top: 0%;
+}
+/* //////// */
+.footer {
+  background: #060d27;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+  color: #fff !important;
+}
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer .footer-left {
+  width: 40%;
+}
+
+.footer h3 {
+  color: #ffffff;
+  font: normal 36px "Open Sans", cursive;
+  margin: 0;
+}
+
+.footer h3 span {
+  color: rgb(41, 128, 0);
+}
+
+/* Footer links */
+
+.footer .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  font-weight: 400;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer .footer-name {
+  color: rgb(2, 128, 0);
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer .footer-center {
+  width: 35%;
+}
+.footer .footer-center i {
+  background-color: #1c4b6b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 400;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer .footer-center p a {
+  color: rgb(4, 128, 0);
+  text-decoration: none;
+}
+
+.footer .footer-links a:before {
+  content: "|";
+  font-weight: 300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer .footer-right {
+  width: 20%;
+}
+
+.footer .footer-about {
+  line-height: 20px;
+  color: #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer .footer-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer .footer-socials {
+  margin-top: 25px;
+}
+
+.footer .footer-socials a {
+  display: inline-block;
+  font-size: 35px;
+  cursor: pointer;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+    /* تحسينات استجابة الصفحة */
+    @media (max-width: 800px) {
+      .footer {
+          font: bold 14px sans-serif;
+      }
+      .footer .footer-left,
+      .footer .footer-center,
+      .footer .footer-right {
+          display: block;
+          width: 100%;
+          margin-bottom: 40px;
+          text-align: center;
+      }
+      .footer .footer-center i {
+          margin-left: 0;
+      }
+  }
+
+  /* media query */
+  @media (max-width: 1120px) {
+      :root {
+          --cols: 3;
+      }
+      .sold-Products .product {
+          margin: auto;
+          width: 70dvw;
+          justify-self: center;
+      }
+  }
+  @media (max-width: 770px) {
+      :root {
+          --cols: 2;
+      }
+      ::-webkit-scrollbar {
+          width: 6px;
+      }
+      .sold-Products .product {
+          flex-direction: column;
+          width: 60dvw;
+          height: 80dvh;
+          align-items: center;
+      }
+      .slide-show {
+          min-height: 30dvh;
+      }
+  }
+  @media (max-width: 570px) {
+      .hd {
+          margin-bottom: 110px;
+          margin-left: 50px;
+      }
+      .marku {
+          font-size: 16px; /* تغيير حجم النص لشريط التمرير */
+          padding: 5px; /* تقليل الحشو لتحسين العرض */
+          white-space: nowrap; /* منع التفاف النص */
+          overflow: hidden; /* إخفاء أي overflow */
+          width: 50%; /* ضبط العرض ليكون 100% */
+          box-sizing: border-box; /* التأكد من احتساب الحشو في العرض */
+          background-color: black; /* لون الخلفية */
+          color: gold; /* لون النص */
+          display: block; /* عرض ككتلة */
+      }
+      :root {
+          --cols: 1;
+      }
+      .slide-show {
+          min-height: 30dvh;
+      }
+      .sold-Products .product {
+          width: 90dvw;
+      }
+  }
+
+  .grow {
+      animation: grow 0.2s ease-in-out 4 both;
+  }
+  @keyframes grow {
+      50% {
+          transform: translateY(-20%) scale(1.1);
+      }
+  }
+  @keyframes shake {
+      0%,
+      100% {
+          transform: translateX(0);
+      }
+      10%,
+      50%,
+      90% {
+          transform: translateX(-5px);
+      }
+      30%,
+      80% {
+          transform: translateX(5px);
+      }
+  }
+  @keyframes fade {
+      from {
+          opacity: 0.4;
+      }
+      to {
+          opacity: 1;
+      }
+  }
+
+  .marku {
+    background-color: black;color: gold;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px; /* الحجم الافتراضي للنص */
+}
+
+.marquee {
+    display: inline-block;
+    position: absolute;
+    left: 100%; /* بدء النص من خارج الحاوية */
+}
+
+/* حركة الماركي */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100vw); }
+}
+
+/* تحسينات استجابة الصفحة */
+@media (max-width: 800px) {
+    .navbar-brand {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .product-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 770px) {
+    .marku {
+        font-size: 18px; /* حجم النص للشاشات الأصغر */
+    }
+    #searchInput {
+        font-size: 14px;
+    }
+    #searchBtn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 570px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+    .product-card {
+        flex: 0 0 100%;
+    }
+    .marku {
+        font-size: 14px; /* حجم النص للشاشات الأصغر جداً */
+    }
+}
+    /* تحسين التنسيق ليكون عموديًا عندما تكون الشاشة أقل من 556 بكسل */
+    @media (max-width: 556px) {
+      .navbar-collapse {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+      }
+
+      .navbar-brand {
+          margin: 0; /* إزالة الهوامش الجانبية */
+          font-size: 20px;
+      }
+
+      .professional-image {
+          width: 100px; /* تعديل حجم الصورة إذا لزم الأمر */
+          margin-bottom: 10px;
+      }
+
+      .hd {
+          flex-direction: column;
+          position: static; /* إزالة التمركز المطلق للتناسب مع الشاشة الصغيرة */
+          margin: 0;
+      }
+
+      #cartSection, #loginBtn, #signupBtn {
+          width: 100%; /* جعل الأزرار بعرض كامل */
+          text-align: center;
+      }
+
+      .marku {
+          font-size: 18px; /* حجم النص للشاشة الصغيرة */
+          margin-top: 15px;
+      }
+
+      /* إعدادات marquee */
+      marquee {
+          font-size: 18px;
+      }
+  }
+
+  /* تحسينات استجابة الصفحة */
+  @media (max-width: 800px) {
+      .navbar-brand {
+          font-size: 24px;
+      }
+  }
+
+  @media (max-width: 1120px) {
+      .product-card {
+          margin-bottom: 20px;
+      }
+  }
+
+  @media (max-width: 770px) {
+      .marku {
+          font-size: 18px; /* حجم النص للشاشات الأصغر */
+      }
+      #searchInput {
+          font-size: 14px;
+      }
+      #searchBtn {
+          font-size: 14px;
+      }
+  }
+/* العرض العمودي على الشاشات الصغيرة */
+@media (max-width: 556px) {
+  .d-flex.flex-column {
+      flex-direction: column !important;
+      align-items: center;
+      gap: 15px;
+  }
+
+  .marku {
+      width: 100%; /* توسيع شريط الماركي ليأخذ عرض الشاشة بالكامل */
+      margin-top: 10px;
+      font-size: 18px; /* تكبير حجم الخط لشاشات الجوال */
+  }
+
+  .navbar-brand, .professional-image, .hd {
+      margin: 0;
+  }
+} /* العرض الأفقي على الشاشات الأكبر */
+@media (min-width: 768px) {
+    .d-flex.flex-column {
+        flex-direction: row !important;
+    }
+    .marku {
+        width: auto;
+    }
+}
+.welcome-message {
+  margin-top: 50px;
+  padding: 20px;
+  background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-name {
+  font-size: 50px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: glow 4.5s ease-in-out infinite alternate;
+}
+
+.description {
+  font-size: 18px;
+  color: #fff5f5;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.login-prompt {
+  font-size: 18px;
+  color: #ff0000;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+@keyframes glow {
+  0% {
+      text-shadow: 0 0 5px #00ddff, 0 0 10px #7d707d, 0 0 15px #122fa4, 0 0 20px #291a29;
+  }
+  100% {
+      text-shadow: 0 0 10px #283442, 0 0 20px #283442, 0 0 30px #0400ff, 0 0 40px #4275b8;
+  }
+}
+/* تخصيص زر السلة */
+#cartDropdownBtn {
+  background-color: #28a745; /* خلفية زر السلة */
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+/* القائمة المنسدلة */
+#cartDropdown {
+  background-color: rgba(0, 0, 0, 0.6); /* خلفية مظللة قليلاً */
+  backdrop-filter: blur(5px); /* تأثير البلور للخلفية */
+  border-radius: 10px; /* حواف مستديرة للقائمة */
+  padding: 10px;
+  max-height: 500px; /* الحد الأقصى للارتفاع */
+  overflow-y: auto; /* تمكين التمرير عند امتلاء القائمة */
+  width: 500px; /* عرض ثابت للقائمة */
+  position: absolute;
+  top: 100%; /* جعل القائمة تحت الزر */
+  left: 50%; /* محاذاة القائمة مع الزر أفقيًا */
+  transform: translateX(-50%); /* محاذاة العنصر في المنتصف بشكل أفقي */
+  display: none; /* إخفاء القائمة بشكل افتراضي */
+  z-index: 999; /* تأكيد أن القائمة ستظهر فوق العناصر الأخرى */
+}
+
+
+/* تخصيص العناصر داخل القائمة المنسدلة */
+.dropdown-item {
+  background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%); /* تدرج لوني في الخلفية */
+  color: white; /* اللون النص */
+  padding: 10px 20px; /* تباعد داخلي */
+  font-size: 16px; /* حجم الخط */
+  border-radius: 5px; /* حواف مستديرة */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات التمرير */
+}
+
+/* تأثير عند مرور الفأرة على العناصر داخل القائمة */
+.dropdown-item:hover {
+  background: radial-gradient(ellipse at center, #f6f6f6 0%, #f1f1f1 40%, #a0a8af 100%);
+  transform: scale(1.05); /* تكبير العنصر عند التمرير فوقه */
+}
+
+/* تخصيص زر "تسجيل الخروج" */
+#logoutBtn {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* تأثير عند المرور على زر "تسجيل الخروج" */
+#logoutBtn:hover {
+  background-color: #c82333;
+  cursor: pointer;
+}

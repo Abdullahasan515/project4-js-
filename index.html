@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./img/tow (1).png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title style="color: aqua;font: width 900px;">cameo</title><!-- إضافة CSS الخاص بـ Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- إضافة JS الخاص بـ Bootstrap (مع Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./mdb.min.css" />
+    <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="py-3">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div  id="navbarNav">
+                <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row">
+                    <a class="navbar-brand" href="index.html" style="color: aqua; font-size: 30px;margin:0% 0% 0% 5%;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-style: italic;font-weight: 300;padding:0%;">
+                        👤 𝒞𝒶𝓂𝑒𝑜 💍🌟
+                    </a>
+                    <img src="./img/four.png" alt="صورة احترافية" class="professional-image">
+    
+                    <!-- قسم السلة مع زر تسجيل الخروج -->
+                    <div class="d-flex justify-content-center hd" id="cartSection">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="cartDropdownBtn"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-shopping-cart"></i> Cart <span id="cartCount" class="badge bg-secondary">0</span>
+                        </button>
+                        <ul class="dropdown-menu" id="cartDropdown" aria-labelledby="cartDropdownBtn">
+                            <div id="cartItemsContainer">
+                                <!-- العناصر التي سيتم عرضها هنا -->
+                            </div>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" id="viewAllProducts" href="view_products.html">View All Products</a></li>
+                        </ul>
+                        <button class="btn btn-danger ms-2" id="logoutBtn">Logout</button>
+                    </div>
+                    
+    
+                    <!-- قسم تسجيل الدخول وإنشاء حساب -->
+                    <div class="d-flex justify-content-center hd">
+                        <button class="btn btn-primary me-2" id="loginBtn">LOGIN</button>
+                        <button class="btn btn-secondary" id="signupBtn">Create Account</button>
+                    </div>
+    
+                    <!-- شريط التمرير (marquee) -->
+                    <div class="marku">
+                        <marquee class="marquee-text" behavior="scroll" direction="right" scrollamount="10" scrolldelay="20" loop="infinite">
+                            ⭐ العقيق اليمني ....حجر كريم يصل سعره الى ارقام خيالية ⭐💍 
+                            يوجد لدينا 💫💫💫 خصم 30% لعملائنا الجدد 💫💫💫💫 عند شراء اثنين احجار كريمة تحصل على الثالث مجانًا
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="welcome-message text-center">
+        <h1 class="user-name" id="userName"></h1>
+        <p class="description">
+           <strong style="font-size: x-large;font: width 900px;"> مرحباً بك في متجرنا! نحن متخصصون في بيع الأحجار الكريمة مثل العقيق اليمني، الياقوت، الزمرد، المرجان، الفيروز وأكثر. كل ما ترغب فيه من أحجار كريمة بأعلى جودة موجود هنا!</strong>
+        </p>
+        <p class="description">
+            Welcome to our store! We specialize in selling gemstones such as Yemeni Agate, Ruby, Emerald, Coral, Turquoise and more. All the top quality gemstones you want are here!
+        </p>
+        <p id="loginPrompt" class="login-prompt"></p>
+    </div>
+    <!-- /////////////////////////////////////////// -->
+    <div class="container d-flex justify-content-center mt-5">
+        <!-- Modal gallery -->
+  <section class="">
+    <!-- Section: Images -->
+    <section class="">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          >
+            <img
+              src="./img/a.webp"
+              class="w-100"
+            />
+            <a href="#!" data-mdb-toggle="modal" data-mdb-target="#exampleModal1">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+            </a>
+          </div>
+        </div>
+  
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          >
+            <img
+              src="./img/b.webp"
+              class="w-100"
+            />
+            <a href="#!" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+            </a>
+          </div>
+        </div>
+  
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
+          >
+            <img
+              src="./img/c.webp"
+              class="w-100"
+            />
+            <a href="#!" data-mdb-toggle="modal" data-mdb-target="#exampleModal3">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Images -->
+  
+    <!-- Section: Modals -->
+    <section class="">
+
+ <!-- Modal 1 -->
+ <div
+ class="modal fade"
+ id="exampleModal1"
+ tabindex="-1"
+ aria-labelledby="exampleModal1Label"
+ aria-hidden="true"
+>
+ <div class="modal-dialog modal-lg">
+   <div class="modal-content">
+     <div class="ratio ratio-16x9">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8NDe3nirM-s?si=f5aGb1mXrx3tfP7K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+     </div>
+
+     <div class="text-center py-3">
+       <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
+         Close
+       </button>
+     </div>
+   </div>
+ </div>
+</div>
+  
+      <!-- Modal 2 -->
+      <div
+        class="modal fade"
+        id="exampleModal2"
+        tabindex="-1"
+        aria-labelledby="exampleModal2Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="ratio ratio-16x9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/RvHghXFfUVA?si=lg4dtnKypWskNB_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+  
+            <div class="text-center py-3">
+              <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal 3 -->
+      <div
+        class="modal fade"
+        id="exampleModal3"
+        tabindex="-1"
+        aria-labelledby="exampleModal3Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="ratio ratio-16x9">
+              <iframe width="942" height="530" src="https://www.youtube.com/embed/gx15Jbb0N1o" title="خاتم عقيق كبدي يماني ( جوهرة العقيق ) (تم البيع....اللهم بارك للبائع و المشتري)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+  
+            <div class="text-center py-3">
+              <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Modals -->
+  </section>
+  <!-- Modal gallery -->
+      </div>
+    <!-- /////////////////////////////////////////////// -->
+    <div class="container mt-4">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" id="searchType">
+                    <option value="name">Search by Name</option>
+                    <option value="category">Search by Category</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary w-100" id="searchBtn">Search</button>
+            </div>
+        </div>
+    
+        <div class="row" id="productsContainer">
+            <div class="col-md-4 product-card" data-id="1" data-name="Turquoise" data-category="Gemstones">
+                <div class="card">
+                    <img src="./img/one (3).png" class="card-img-top product-image" alt="Turquoise">
+                    <div class="card-body">
+                        <h5 class="card-title">Turquoise</h5>
+                        <p class="card-category">Category: Gemstones</p>
+                        <p class="card-text">First class turquoise stone</p>
+                        <p class="card-price">$25.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Turquoise" data-image="./img/one (3).png" data-price="25">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Turquoise" data-image="./img/one (3).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="2" data-name="Sapphire" data-category="Gemstones">
+                <div class="card">
+                    <img src="./img/one (2).png" class="card-img-top product-image" alt="Sapphire">
+                    <div class="card-body">
+                        <h5 class="card-title">Sapphire</h5>
+                        <p class="card-category">Category: Gemstones</p>
+                        <p class="card-text">First class natural sapphire stone</p>
+                        <p class="card-price">$30.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Sapphire" data-image="./img/one (2).png" data-price="30">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Sapphire" data-image="./img/one (2).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="3" data-name="Sapphire2" data-category="Gemstones">
+                <div class="card">
+                    <img src="./img/one (1).png" class="card-img-top product-image" alt="Sapphire2">
+                    <div class="card-body">
+                        <h5 class="card-title">Sapphire2</h5>
+                        <p class="card-category">Category: Gemstones</p>
+                        <p class="card-text">Second class Thai sapphire</p>
+                        <p class="card-price">$45.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Sapphire2" data-image="./img/one (1).png" data-price="45">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Sapphire2" data-image="./img/one (1).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="4" data-name="Amber" data-category="Organic Stones">
+                <div class="card">
+                    <img src="./img/one (9).png" class="card-img-top product-image" alt="Amber">
+                    <div class="card-body">
+                        <h5 class="card-title">Amber</h5>
+                        <p class="card-category">Category: Organic Stones</p>
+                        <p class="card-text">A precious stone and most of them take it for treatment as it is a purely natural stone</p>
+                        <p class="card-price">$35.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Amber" data-image="./img/one (9).png" data-price="35">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Amber" data-image="./img/one (9).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="5" data-name="Yemeni agate1" data-category="Agates">
+                <div class="card">
+                    <img src="./img/tow (1).png" class="card-img-top product-image" alt="Yemeni agate1">
+                    <div class="card-body">
+                        <h5 class="card-title">Yemeni agate1</h5>
+                        <p class="card-category">Category: Agates</p>
+                        <p class="card-text">First class honey Yemeni agate, a luxurious type, something</p>
+                        <p class="card-price">$50.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Yemeni agate1" data-image="./img/tow (1).png" data-price="50">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Yemeni agate1" data-image="./img/tow (1).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="6" data-name="Yemeni agate2" data-category="Agates">
+                <div class="card">
+                    <img src="./img/tow (2).png" class="card-img-top product-image" alt="Yemeni agate2">
+                    <div class="card-body">
+                        <h5 class="card-title">Yemeni agate2</h5>
+                        <p class="card-category">Category: Agates</p>
+                        <p class="card-text">A rare collection of Yemeni agate</p>
+                        <p class="card-price">$20.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Yemeni agate2" data-image="./img/tow (2).png" data-price="20">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Yemeni agate2" data-image="./img/tow (2).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="7" data-name="Precious stones" data-category="Mixed">
+                <div class="card">
+                    <img src="./img/tow (3).png" class="card-img-top product-image" alt="Precious stones">
+                    <div class="card-body">
+                        <h5 class="card-title">Precious stones</h5>
+                        <p class="card-category">Category: Mixed</p>
+                        <p class="card-text">A rare collection of precious stones, sapphire, agate, Suleimani and spiral</p>
+                        <p class="card-price">$55.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Precious stones" data-image="./img/tow (3).png" data-price="55">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Precious stones" data-image="./img/tow (3).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="8" data-name="Yemeni Suleimani agate" data-category="Agates">
+                <div class="card">
+                    <img src="./img/one (5).png" class="card-img-top product-image" alt="Yemeni Suleimani agate">
+                    <div class="card-body">
+                        <h5 class="card-title">Yemeni Suleimani agate</h5>
+                        <p class="card-category">Category: Agates</p>
+                        <p class="card-text">First class you know it from its price as it is used for treatment and no one can deny this after God Almighty as it is one of the sunshine of youth</p>
+                        <p class="card-price">$40.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Yemeni Suleimani agate" data-image="./img/one (5).png" data-price="40">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Yemeni Suleimani agate" data-image="./img/one (5).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="9" data-name="Yemeni agate3" data-category="Agates">
+                <div class="card">
+                    <img src="./img/one (4).png" class="card-img-top product-image" alt="Yemeni agate3">
+                    <div class="card-body">
+                        <h5 class="card-title">Yemeni agate3</h5>
+                        <p class="card-category">Category: Agates</p>
+                        <p class="card-text">First class Yemeni agate, gazelle blood</p>
+                        <p class="card-price">$60.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Yemeni agate3" data-image="./img/one (4).png" data-price="60">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Yemeni agate3" data-image="./img/one (4).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="10" data-name="Turquoise0" data-category="Gemstones">
+                <div class="card">
+                    <img src="./img/one (3).png" class="card-img-top product-image" alt="Turquoise0">
+                    <div class="card-body">
+                        <h5 class="card-title">Turquoise0</h5>
+                        <p class="card-category">Category: Gemstones</p>
+                        <p class="card-text">First class turquoise stone</p>
+                        <p class="card-price">$60.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Turquoise0" data-image="./img/one (3).png" data-price="60">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Turquoise0" data-image="./img/one (3).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="11" data-name="Yemeni agate4" data-category="Agates">
+                <div class="card">
+                    <img src="./img/one (2).png" class="card-img-top product-image" alt="Yemeni agate4">
+                    <div class="card-body">
+                        <h5 class="card-title">Yemeni agate4</h5>
+                        <p class="card-category">Category: Agates</p>
+                        <p class="card-text">Description of Yemeni agate.</p>
+                        <p class="card-price">$60.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Yemeni agate4" data-image="./img/one (2).png" data-price="60">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Yemeni agate4" data-image="./img/one (2).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 product-card" data-id="12" data-name="Indian green sapphire" data-category="Gemstones">
+                <div class="card">
+                    <img src="./img/one (1).png" class="card-img-top product-image" alt="Indian green sapphire">
+                    <div class="card-body">
+                        <h5 class="card-title">Indian green sapphire</h5>
+                        <p class="card-category">Category: Gemstones</p>
+                        <p class="card-text">A luxurious type and a view befitting the luxurious</p>
+                        <p class="card-price">$60.00</p>
+                        <button class="btn btn-primary add-to-cart" data-product="Indian green sapphire" data-image="./img/one (1).png" data-price="60">Add to Cart</button>
+                        <button class="btn btn-outline-secondary favorite-btn" data-product="Indian green sapphire" data-image="./img/one (1).png"><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Toast Message -->
+    <div id="favoriteToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">إشعار</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+    <footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/Person">
+        <div class="footer-left" itemscope itemtype="http://schema.org/Person" class="h-card">
+            <h3 itemprop="name" class="p-name">Gemstones are precious(خواتم فضه)</h3>
+            <p class="p-job-title" itemprop="jobTitle">لكل انواع الاحجار الكريمه</p>
+            
+            <p class="footer-name">© 2024 abdullahAmer</p>
+        </div>
+    
+        <div class="footer-center" id="footer">
+            <div>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <p itemprop="telephone" class="p-tel">+967 715935213</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <p><a href="mailto:myname@mail.com" itemprop="email" class="u-email">ENGINERabdullah@gmail.com</a></p>
+            </div>
+        </div>
+    
+        <div class="footer-right">
+            <p class="footer-about">
+                <span>About us</span>
+                Gemstones are precious or semi-precious minerals that are cut and polished to be used in jewelry and decorative items. Each gemstone has unique characteristics, including color, clarity, cut, and carat weight, which contribute to its value and beauty.
+            </p>
+            <div class="footer-socials">
+                <a href="#" rel="me" aria-label="GitHub" itemprop="sameAs" class="u-url"><i class="fa-brands fa-github"></i></a>
+               <a href="#" rel="me" aria-label="Instagram" itemprop="sameAs" class="u-url"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+<script type="text/javascript" src="./mdb.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+                // جافا سكربت لعرض وإخفاء القائمة
+                document.getElementById('cartDropdownBtn').addEventListener('click', function() {
+                    const dropdown = document.getElementById('cartDropdown');
+                    
+                    // التبديل بين عرض وإخفاء القائمة المنسدلة
+                    if (dropdown.style.display === 'block') {
+                        dropdown.style.display = 'none'; // إذا كانت مرئية، أخفيها
+                    } else {
+                        dropdown.style.display = 'block'; // إذا كانت مخفية، أظهرها
+                    }
+                });
+            
+            // التحقق من حالة تسجيل الدخول
+            const username = localStorage.getItem('username') || sessionStorage.getItem('username');
+            const isLoggedIn = username !== null;
+            const userData = JSON.parse(localStorage.getItem('user'));
+
+            // إعداد عناصر السلة والمفضلة
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let favoriteItems = JSON.parse(localStorage.getItem('favoriteItems')) || [];
+            let products = [...document.querySelectorAll('.product-card')]; // تخزين جميع المنتجات
+
+            // إظهار أو إخفاء العناصر بناءً على حالة تسجيل الدخول
+            if (isLoggedIn) {
+                document.getElementById('cartSection').style.display = 'block'; // إظهار قسم السلة
+                document.getElementById('loginBtn').style.display = 'none'; // إخفاء زر تسجيل الدخول
+                document.getElementById('signupBtn').style.display = 'none'; // إخفاء زر إنشاء حساب
+
+                document.getElementById("userName").innerHTML = `<img src="./img/Z.gif" alt="User Avatar" style="width: 150px; height: 120px;border-radius: 50%;margin-bottom: 30px;"> ${userData.name} 🤩`;
+                document.getElementById("loginPrompt").textContent = '';  // إخفاء رسالة التسجيل
+                updateCartCount(); // تحديث عدد العناصر في السلة
+                renderCartItems(); // عرض العناصر في السلة
+            } else {
+                
+   /* document.getElementById('userName').style.visibility = 'hidden'; // إخفاء قسم السلة
+    document.getElementById('loginPrompt').style.visibility = 'hidden'; // إخفاء قسم السلة
+    */
+    document.getElementById("userName").textContent = "أنت غير مسجل";
+    document.getElementById("loginPrompt").textContent = "يرجى تسجيل الدخول لبدء التسوق!";
+                document.getElementById('cartSection').style.visibility = 'hidden'; // إخفاء قسم السلة
+                document.getElementById('loginBtn').style.display = 'block'; // إظهار زر تسجيل الدخول
+                document.getElementById('signupBtn').style.display = 'block'; // إظهار زر إنشاء حساب
+            }
+
+            // إضافة أحداث للأزرار
+            document.getElementById('loginBtn').onclick = () => location.href = 'login.html'; // إعادة التوجيه إلى صفحة تسجيل الدخول
+            document.getElementById('signupBtn').onclick = () => location.href = 'sign-up.html'; // إعادة التوجيه إلى صفحة إنشاء حساب
+
+            // البحث عن المنتجات
+            document.getElementById('searchBtn').addEventListener('click', function() {
+                const searchInput = document.getElementById('searchInput').value.toLowerCase();
+                const searchType = document.getElementById('searchType').value;
+                const products = document.querySelectorAll('.product-card');
+        
+                products.forEach(product => {
+                    const productName = product.getAttribute('data-name').toLowerCase();
+                    const productCategory = product.getAttribute('data-category').toLowerCase();
+        
+                    if (searchType === 'name') {
+                        if (productName.includes(searchInput)) {
+                            product.style.display = 'block'; // عرض المنتج
+                        } else {
+                            product.style.display = 'none'; // إخفاء المنتج
+                        }
+                    } else if (searchType === 'category') {
+                        if (productCategory.includes(searchInput)) {
+                            product.style.display = 'block'; // عرض المنتج
+                        } else {
+                            product.style.display = 'none'; // إخفاء المنتج
+                        }
+                    }
+                });
+            });
+            // إضافة العناصر إلى السلة
+            function addToCart(product, image, price) {
+                if (!isLoggedIn) {
+                    alert("يرجى تسجيل الدخول لإضافة عناصر إلى السلة.");
+                    return;
+                }
+
+                const existingItem = cartItems.find(item => item.name === product);
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cartItems.push({ name: product, quantity: 1, image: image, price: price });
+                }
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCartCount();
+                renderCartItems();
+            }
+
+function addToFavorites(productId, image, button) {
+    if (!isLoggedIn) {
+        alert("يرجى تسجيل الدخول لإضافة عناصر إلى المفضلة.");
+        return;
+    }
+
+    const existingFavorite = favoriteItems.find(item => item.id === productId); // تحقق باستخدام id
+    if (!existingFavorite) {
+        favoriteItems.push({ id: productId, image: image }); // إضافة id إلى العنصر المفضل
+        localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+
+        // تلوين زر الإعجاب فقط بعد إضافة المنتج إلى المفضلة
+        button.classList.add('active'); // إضافة اللون الأحمر عند التفعيل
+
+        // رسالة نجاح
+        const toastMessage = document.getElementById('toastMessage');
+        toastMessage.textContent = `تم إضافة المنتج إلى المفضلة! لا داعي للضغط مرة أخرى.`;
+
+        const toastElement = document.getElementById('favoriteToast');
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+    }
+}
+            
+
+            // تحديث عدد العناصر في السلة
+            function updateCartCount() {
+                const cartCount = document.getElementById('cartCount');
+                cartCount.textContent = cartItems.reduce((total, item) => total + item.quantity, 0);
+            }
+
+            // عرض العناصر في السلة
+            function renderCartItems() {
+                const cartItemsContainer = document.getElementById('cartItemsContainer');
+                cartItemsContainer.innerHTML = '';
+
+                if (cartItems.length === 0) {
+                    cartItemsContainer.innerHTML = '<li class="dropdown-item">لا توجد عناصر في السلة</li>';
+                    return;
+                }
+
+                cartItems.forEach((item, index) => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'dropdown-item d-flex justify-content-between align-items-center';
+
+                    const image = document.createElement('img');
+                    image.src = item.image;
+                    image.alt = item.name;
+                    image.style.width = '30px';
+                    image.style.height = '30px';
+                    image.className = 'me-2';
+
+                    listItem.appendChild(image);
+
+                    const quantityControl = document.createElement('div');
+                    quantityControl.innerHTML = `
+                        <span>${item.name}</span>
+                        <button class="btn btn-sm btn-outline-secondary change-quantity" data-index="${index}" data-action="decrease">-</button>
+                        <span class="mx-2">${item.quantity}</span>
+                        <button class="btn btn-sm btn-outline-secondary change-quantity" data-index="${index}" data-action="increase">+</button>
+                    `;
+                    listItem.appendChild(quantityControl);
+                    cartItemsContainer.appendChild(listItem);
+                });
+            }
+
+            // التعامل مع تغييرات الكمية في السلة
+            document.getElementById('cartItemsContainer').addEventListener('click', function (e) {
+                if (e.target.classList.contains('change-quantity')) {
+                    e.stopPropagation();
+                    const index = e.target.getAttribute('data-index');
+                    const action = e.target.getAttribute('data-action');
+
+                    if (action === 'increase') {
+                        cartItems[index].quantity++;
+                    } else if (action === 'decrease') {
+                        cartItems[index].quantity--;
+                        if (cartItems[index].quantity < 1) {
+                            cartItems.splice(index, 1);
+                        }
+                    }
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    updateCartCount();
+                    renderCartItems();
+                }
+            });
+
+            // التعامل مع زر عرض جميع المنتجات
+            document.getElementById('viewAllProducts').addEventListener('click', function () {
+                alert("الانتقال إلى view_products.html...");
+            });
+
+            // التعامل مع زر تسجيل الخروج
+            document.getElementById('logoutBtn').addEventListener('click', function () {
+                if (confirm("هل تريد تسجيل الخروج؟")) {
+                    // إزالة اسم المستخدم من localStorage و sessionStorage
+                    localStorage.removeItem('username');
+                    sessionStorage.removeItem('username');
+
+                    // إعادة تعيين حالة السلة والمفضلة إذا لزم الأمر
+                    localStorage.removeItem('cartItems');
+                    localStorage.removeItem('favoriteItems');
+
+                    // إعادة توجيه المستخدم إلى الصفحة الرئيسية بعد 2 ثانية
+                    setTimeout(() => {
+                        location.href = 'index.html';
+                    }, 1000);
+                }
+            });
+
+            // إضافة الأحداث على الأزرار "أضف إلى السلة" و"أضف إلى المفضلة"
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function () {
+                    const product = this.getAttribute('data-product');
+                    const image = this.getAttribute('data-image');
+                    const price = this.getAttribute('data-price');
+                    addToCart(product, image, price);
+                });
+            });
+
+            document.querySelectorAll('.favorite-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const productId = this.closest('.product-card').getAttribute('data-id'); // استخدام data-id
+        const image = this.getAttribute('data-image');
+        addToFavorites(productId, image, this); // تمرير productId والززر الحالي
+        
+    });
+});
+            
+
+            // تحديث عدد العناصر عند تحميل الصفحة
+            updateCartCount();
+            renderCartItems();
+        });
+
+    </script>
+</body>
+
+</html>

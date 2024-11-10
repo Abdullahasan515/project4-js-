@@ -1,0 +1,6 @@
+Natural-stones
+
+
+
+
+This is my fourth beginner project: an e-commerce site for Yemeni agate and gemstones. Thanks to my academy and Engineer Islam's guidance, I completed four front-end features to prepare for backend development, currently using localStorage to store user info for product interaction. The project owner is student.Abdullah Amer
